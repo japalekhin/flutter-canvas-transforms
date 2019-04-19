@@ -1,16 +1,15 @@
-# canvas_transforms
+# Basic Canvas Transforms
 
-A new Flutter project.
+This is the accompanying project for the [**Canvas Rendering Transform Basics with Flame and Flutter**](https://jap.alekhin.io/canvas-transform-basics-flame-flutter) guide on [`jap.alekhin.io`](https://jap.alekhin.io).
+
+## Support
+
+Please support my work by becoming a patron on Patreon.
+
+[![](https://jap.alekhin.io/wp-content/uploads/2019/03/become-patron-button.png)](https://www.patreon.com/bePatron?u=6507717)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+* Head on over to [the guide](https://jap.alekhin.io/canvas-transform-basics-flame-flutter)
+* Clone this repository
+* Play around with the examples code
