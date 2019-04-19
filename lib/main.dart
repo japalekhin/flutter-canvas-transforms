@@ -64,6 +64,16 @@ class TransformGame extends Game {
     canvas.restore();
   }
 
+  void renderRotateHalfRad(Canvas canvas) {
+    canvas.save();
+
+    canvas.rotate(.5);
+
+    sunset.renderRect(canvas, Rect.fromLTWH(0, 0, 200, 200));
+    canvas.restore();
+  }
+
+
   void render(Canvas canvas) {
     // return if the screen size is not yet determined
     if (screen == null) return;
@@ -78,6 +88,7 @@ class TransformGame extends Game {
     // renderScaledDown(canvas);
     // renderScaledTall(canvas);
     // renderScaledShortFat(canvas);
+    renderRotateHalfRad(canvas);
   }
 
   void update(double t) {}
