@@ -18,6 +18,16 @@ class TransformGame extends Game {
     sunset = Sprite('sunset.jpg');
   }
 
+  void renderCentered(Canvas canvas) {
+    canvas.save();
+
+    canvas.translate(screen.center.dx, screen.center.dy); // center screen
+    canvas.translate(-100, -100); // compensate for image size
+
+    sunset.renderRect(canvas, Rect.fromLTWH(0, 0, 200, 200));
+    canvas.restore();
+  }
+
   void render(Canvas canvas) {
     // return if the screen size is not yet determined
     if (screen == null) return;
@@ -25,7 +35,8 @@ class TransformGame extends Game {
     // draw a background color
     canvas.drawRect(screen, Paint()..color = Color(0xfff7f1e3));
 
-    sunset.renderRect(canvas, Rect.fromLTWH(0, 0, 200, 200));
+    // mix and match
+    renderCentered(canvas);
   }
 
   void update(double t) {}
