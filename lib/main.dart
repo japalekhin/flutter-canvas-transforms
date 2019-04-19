@@ -4,6 +4,7 @@ import 'package:flame/sprite.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
+  await Flame.util.fullScreen();
   await Flame.images.loadAll(<String>['sunset.jpg']);
 
   runApp(TransformGame().widget);
