@@ -73,6 +73,32 @@ class TransformGame extends Game {
     canvas.restore();
   }
 
+  void renderScewHorizontalPositive(Canvas canvas) {
+    canvas.save();
+
+    canvas.skew(.25, 0);
+
+    sunset.renderRect(canvas, Rect.fromLTWH(0, 0, 200, 200));
+    canvas.restore();
+  }
+
+  void renderSkewVerticalPositive(Canvas canvas) {
+    canvas.save();
+
+    canvas.skew(0, .75);
+
+    sunset.renderRect(canvas, Rect.fromLTWH(0, 0, 200, 200));
+    canvas.restore();
+  }
+
+  void renderSkewHPositiveVNegative(Canvas canvas) {
+    canvas.save();
+
+    canvas.skew(.15, -.375);
+
+    sunset.renderRect(canvas, Rect.fromLTWH(0, 0, 200, 200));
+    canvas.restore();
+  }
 
   void render(Canvas canvas) {
     // return if the screen size is not yet determined
@@ -88,7 +114,10 @@ class TransformGame extends Game {
     // renderScaledDown(canvas);
     // renderScaledTall(canvas);
     // renderScaledShortFat(canvas);
-    renderRotateHalfRad(canvas);
+    // renderRotateHalfRad(canvas);
+    // renderScewHorizontalPositive(canvas);
+    // renderSkewVerticalPositive(canvas);
+    renderSkewHPositiveVNegative(canvas);
   }
 
   void update(double t) {}
