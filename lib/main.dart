@@ -5,7 +5,11 @@ import 'package:flutter/material.dart';
 
 void main() async {
   await Flame.util.fullScreen();
-  await Flame.images.loadAll(<String>['sunset.jpg']);
+  await Flame.images.loadAll(<String>[
+    'sunset.jpg',
+    'scene.jpg',
+    'aero.png',
+  ]);
 
   runApp(TransformGame().widget);
 }
