@@ -20,3 +20,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/sunset.jpg
+    - assets/images/scene.jpg
+    - assets/images/aero.png
