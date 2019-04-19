@@ -18,9 +18,12 @@ class TransformGame extends Game {
   }
 
   void render(Canvas canvas) {
+    // return if the screen size is not yet determined
     if (screen == null) return;
 
+    // draw a background color
     canvas.drawRect(screen, Paint()..color = Color(0xfff7f1e3));
+
     sunset.renderRect(canvas, Rect.fromLTWH(0, 0, 200, 200));
   }
 
