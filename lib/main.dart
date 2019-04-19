@@ -17,9 +17,13 @@ void main() async {
 class TransformGame extends Game {
   Rect screen;
   Sprite sunset;
+  Sprite scene;
+  Sprite aero;
 
   TransformGame() {
     sunset = Sprite('sunset.jpg');
+    scene = Sprite('scene.jpg');
+    aero = Sprite('aero.png');
   }
 
   void renderCentered(Canvas canvas) {
