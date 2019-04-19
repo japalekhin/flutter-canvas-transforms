@@ -100,6 +100,35 @@ class TransformGame extends Game {
     canvas.restore();
   }
 
+  void renderMixed(Canvas canvas) {
+    // save the original state
+    canvas.save();
+
+    // center the origin (then save this state)
+    canvas.translate(screen.center.dx, screen.center.dy);
+    canvas.save();
+
+    // resize the canvas up by 2 (double)
+    canvas.scale(2);
+
+    // render image (with size compensation)
+    canvas.translate(-100, -100);
+    sunset.renderRect(canvas, Rect.fromLTWH(0, 0, 200, 200));
+
+    // restore back to just the centered origin
+    canvas.restore();
+
+    // rotate the canvas
+    canvas.rotate(2);
+
+    // render image again (with size compensation)
+    canvas.translate(-100, -100);
+    sunset.renderRect(canvas, Rect.fromLTWH(0, 0, 200, 200));
+
+    // restore the original state();
+    canvas.restore();
+  }
+
   void render(Canvas canvas) {
     // return if the screen size is not yet determined
     if (screen == null) return;
@@ -117,7 +146,8 @@ class TransformGame extends Game {
     // renderRotateHalfRad(canvas);
     // renderScewHorizontalPositive(canvas);
     // renderSkewVerticalPositive(canvas);
-    renderSkewHPositiveVNegative(canvas);
+    // renderSkewHPositiveVNegative(canvas);
+    renderMixed(canvas);
   }
 
   void update(double t) {}
