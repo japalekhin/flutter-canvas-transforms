@@ -137,6 +137,48 @@ class TransformGame extends Game {
     canvas.restore();
   }
 
+  void renderAeroScene(Canvas canvas) {
+    // render background and save the original state
+    scene.renderRect(canvas, screen);
+    canvas.save();
+
+    // translate the origin to bottom-center of screen
+    canvas.translate(screen.center.dx, screen.height);
+    // compensate for the image height
+    // horizontally the image will be centered
+    // vertically the image will sit at the bottom
+    canvas.translate(-150, -300);
+
+    // draw my cute then-puppy
+    aero.renderRect(canvas, Rect.fromLTWH(0, 0, 300, 300));
+
+    // restore original state
+    canvas.restore();
+  }
+
+  void renderAeroSceneFlipped(Canvas canvas) {
+    // render background and save the original state
+    scene.renderRect(canvas, screen);
+    canvas.save();
+
+    // translate the origin to bottom-center of screen
+    canvas.translate(screen.center.dx, screen.height);
+
+    // flip horizontally
+    canvas.scale(-1, 1);
+
+    // compensate for the image height
+    // horizontally the image will be centered
+    // vertically the image will sit at the bottom
+    canvas.translate(-150, -300);
+
+    // draw my cute then-puppy
+    aero.renderRect(canvas, Rect.fromLTWH(0, 0, 300, 300));
+
+    // restore original state
+    canvas.restore();
+  }
+
   void render(Canvas canvas) {
     // return if the screen size is not yet determined
     if (screen == null) return;
@@ -155,7 +197,9 @@ class TransformGame extends Game {
     // renderScewHorizontalPositive(canvas);
     // renderSkewVerticalPositive(canvas);
     // renderSkewHPositiveVNegative(canvas);
-    renderMixed(canvas);
+    // renderMixed(canvas);
+    // renderAeroScene(canvas);
+    renderAeroSceneFlipped(canvas);
   }
 
   void update(double t) {}
